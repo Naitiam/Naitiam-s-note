@@ -4,16 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "444415f6cf4420f0",
+        "id": "03a3ed014a9a4b89",
         "type": "leaf",
         "state": {
-          "type": "markdown",
-          "state": {
-            "file": "前端/Vue/事件处理 键盘事件.md",
-            "mode": "source",
-            "backlinks": true,
-            "source": false
-          }
+          "type": "empty",
+          "state": {}
         }
       }
     ],
@@ -78,7 +73,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "前端/Vue/事件处理 键盘事件.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,7 +89,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "前端/Vue/事件处理 键盘事件.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -117,9 +110,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "前端/Vue/事件处理 键盘事件.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -129,17 +120,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "444415f6cf4420f0",
+  "active": "03a3ed014a9a4b89",
   "lastOpenFiles": [
+    "前端/Vue/Vue管理CSS样式.md",
+    "前端/Vue/Vue.md",
+    "前端/Vue/ref属性 父传子 mixin plugin scoped.md",
+    "前端/Vue/指令.md",
+    "前端/Vue/自定义事件 子传父.md",
+    "前端/Vue/全局事件总线.md",
+    "前端/Vue/事件处理 键盘事件.md",
     "前端/Vue/生命周期.md",
     "前端/Vue/计算属性 监视属性.md",
-    "前端/Vue/Vue.md",
-    "前端/Vue/自定义事件 子传父.md",
-    "前端/Vue/初识 MVVM 数据绑定.md",
-    "前端/Vue/事件处理 键盘事件.md",
-    "前端/Vue/未命名.md",
-    "README.md",
-    "前端/Vue/初识 MVVM 数据绑定 1.md",
-    "前端/CSS/CSS小技巧.md"
+    "前端/Vue/初识 MVVM 数据绑定.md"
   ]
 }
