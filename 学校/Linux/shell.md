@@ -74,3 +74,99 @@ var2=250
 echo $?   # 0
 ```
 
+
+
+
+
+函数的参数：
+
+- $0：脚本文件名
+- $1、…、$n：第n个参数
+- $#：参数个数
+- $*：作为一个整体的所有参数
+- $@：作为集合的所有参数
+
+**使用if语句判断并显示输入文件的属性**
+
+```shell
+#!/bin/bash
+#an example script of if
+clear
+echo "Input a file or directory name,please"
+read path_name
+if [ -d $path_name ]
+then
+        echo "$path_name is a directory"
+elif [ -f $path_name ]
+then
+        echo "$path_name is a regular file"
+        if [ -r $path_name ]
+        then
+                echo "$path_name is a readable file"
+        fi
+        if [ -w $path_name ]
+        then
+                echo "$path_name is a writeable file"
+        fi
+        if [ -x $path_name ]
+        then
+                echo "$path_name is a executable file"
+        fi
+```
+
+**以命令的返回值作为判断条件**
+
+```shell
+#!/bin/bash
+#another example script of if
+echo "Input a directory,please!"
+read dir_name
+if cd $dir_name > /dev/null 2>&1 ;then
+        echo "enter directory:$dir_name succeed"
+else
+        echo "enter directory:$dir_name failded"
+fi
+```
+
+```shell
+#!/bin/bash
+#an example script of case
+clear
+echo "Are you like Linux?"
+read like_it
+case $like_it in
+y|Y|yes|Yes)echo "Linux is a good friend of us."
+        ;;
+n|N|no|No)echo "Try it, and you will like it."
+        ;;
+*)echo "you answer is: $like_it"
+        ;;
+esac
+```
+
+until循环语句
+
+```shell
+#!/bin/bash
+#an example script of  while
+clear
+loop=0
+until [ $loop -eq 10 ]
+do
+        let loop=$loop+1
+        echo "currnet value of loop is:$loop"
+done
+```
+
+```sh
+#!/bin/bash
+#an example script of  while
+clear
+loop=0
+while [ $loop -ne 10 ]
+do
+        let loop=$loop+1
+        echo "currnet value of loop is:$loop"
+done
+```
+

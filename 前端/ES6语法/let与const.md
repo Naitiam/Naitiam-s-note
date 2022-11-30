@@ -1,4 +1,4 @@
-## **js中三种定义变量的方式 let，const， var的区别**
+> [ECMAScript 6 简介 - ECMAScript 6入门 (ruanyifeng.com)](https://es6.ruanyifeng.com/?search=assign&x=11&y=3#docs/intro)
 
 > 主要是let与const
 
@@ -78,5 +78,3 @@
     change();
     console.log('函数调用后var定义a为函数内部修改值：' + a);//可以输出a=4
 ```
-
-
