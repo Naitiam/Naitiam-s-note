@@ -1,3 +1,13 @@
+```
+基础
+绘图库
+分词词云库
+可视化库
+那就做点简单练习
+```
+
+
+
 ```python
 # 单行注释
 ''' 多行注释 '''
@@ -47,11 +57,15 @@ print(eval("x+1"))
 
 **列表**['','','']
 
-**元组()**
+append  remove
 
-**集合{}**
+**元组()**：不涉及元素修改的操作
+
+**集合{}**：set  不重复
 
 **字典{" ":" "}**
+
+
 
 ## 运算符
 
@@ -101,6 +115,8 @@ arrs2 = arrs1[-3:]
 print(arrs2)  # [3, 4, 5]
 arrs2 = arrs1[:]
 print(arrs2)  # [1, 2, 3, 4, 5]
+arrs2 = arrs1[::-1]  # 反转列表
+print(arrs2)  # [5, 4, 3, 2, 1]
 ```
 
 ## 分支
@@ -171,5 +187,41 @@ print(random.random()) 				# 生成一个[0.0,1.0)之间的随机小数
 print(random.randint(1,3)) 			# randint(a,b)生成一个[a,b]之间的整数
 print(random.randrange(1,100)) 		# randrange(m,n[k])生成一个[m,n)之间以k为步长的随机整数
 print(random.choice([1, 2, 3, 4, 5, 6, 7, 8, 9, 0])) 	# 随机选出一个
+```
+
+## 函数
+
+```python
+def fabs(x):
+    if x>=0:
+        y=x
+    else:
+        y=-x
+    return y
+print(fabs(-7))
+```
+
+```python
+# 可变参数函数
+def max(*x):
+    if len(x)==0:
+        return "没有数据"
+    else:
+        maxX = x[0]
+        for i in x:
+            if i>maxX:
+                maxX = i
+        return maxX
+print(max(12,76,98,45,34))
+
+# 可选参数的函数，需为该参数指定默认值
+```
+
+## 异常处理
+
+```
+try:
+except:
+	pass
 ```
 

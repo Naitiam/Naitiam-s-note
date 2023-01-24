@@ -54,7 +54,7 @@ SHIFT + E 对称挤出骨骼
 
 \>>节点编辑器  CTRL+SHIFT+左键点击   预览该节点开启插件Node:Node Wrangler
 
-\>>节点编辑器  SHIFT +A 添加节点
+\>>节点编辑器  SHIFT +A 添加节点  SHIFT +F 
 
 Math
 
