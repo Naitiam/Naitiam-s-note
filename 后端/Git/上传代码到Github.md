@@ -8,7 +8,7 @@
 
 `git add . `  添加全部文件到暂存区
 
-`git commit -m "message" `提交到暂
+`git commit -m "message" `提交到暂存区
 
 `git push -u origin master `将本地仓库的项目提交到远程仓库，分支名称被改变。把默认改为master而非main
 
