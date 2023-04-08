@@ -28,7 +28,9 @@ class Animal{
 }
 ```
 
-```javascript
+### ES 引入模块
+
+```html
 <script type="module">
     // import {name,sayName,Animal} from './modules/index.js'
     import * as fn from './modules/index.js'
@@ -38,4 +40,18 @@ class Animal{
     // console.log(name);
 </script>
 ```
+
+### CommonJS 规范引入模块
+
+所有的CommonJS的模块都会被包装到一个函数中
+
+`function(exports,require,module,__filename,____dirname)`
+
+```
+const m1 = require("./modules/index.js");
+const m2 = require("./modules")//./modules/index.js
+console.log(__filename)
+```
+
+
 

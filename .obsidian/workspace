@@ -7,8 +7,13 @@
         "id": "03a3ed014a9a4b89",
         "type": "leaf",
         "state": {
-          "type": "graph",
-          "state": {}
+          "type": "markdown",
+          "state": {
+            "file": "前端框架技术/Vue/Vue.md",
+            "mode": "source",
+            "backlinks": true,
+            "source": false
+          }
         }
       }
     ],
@@ -73,6 +78,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "前端框架技术/Vue/Vue.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,6 +95,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "前端框架技术/Vue/Vue.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -110,7 +117,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "前端框架技术/Vue/Vue.md"
+              }
             }
           }
         ]
@@ -122,15 +131,15 @@
   },
   "active": "03a3ed014a9a4b89",
   "lastOpenFiles": [
+    "前端框架技术/Vue/初识 MVVM 数据绑定.md",
+    "前端框架技术/Vue/Vue.md",
+    "前端框架技术/Vue/过渡与动画.md",
     "前端/Vue/Vue.md",
     "前端/ES6语法/解构赋值.md",
     "前端/ES6语法/函数.md",
     "前端/ES6语法/模板字符串.md",
     "前端/ES6语法/const与var.md",
     "前端/JQuery/JQ基础.md",
-    "前端/Vue/随手笔记.md",
-    "后端/MySQL数据库/查.md",
-    "后端/MySQL数据库/对库操作.md",
-    "后端/MySQL数据库/对数据操作.md"
+    "前端/Vue/随手笔记.md"
   ]
 }

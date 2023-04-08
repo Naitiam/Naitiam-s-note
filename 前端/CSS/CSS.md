@@ -61,8 +61,11 @@ a:visited	用户已访问的链接。
 ### 列表样式
 
 list-style	list-style-type、list-style-position、list-style-image	在一个声明中设置所有的列表属性
+
 list-style-image	URL、none	设置图像为列表项标志
+
 list-style-position	inside、outside、inherit	设置列表中列表项标志的位置
+
 list-style-type	disc（默认）、circle、square、decimal 等	设置列表项标志的类型
 
 ## 盒模型
@@ -138,7 +141,7 @@ position  属性  结合 top right bottom left
 
   - E:last-child	选择元素 E 的最后一个子元素。
 
-  - E:nth-child(n)	选择元素 E 的第 n 个子元素，n 有三种取值，数字、odd 和 even。注意第一个子元素的下标是 1。
+  - E:nth-child(n)	选择元素 E 的第 n 个子元素，n 有三种取值，数字、odd 和 even。注意**第一个子元素的下标是 1**。
 
   - E:only-child	选择元素 E 下唯一的子元素。
 
@@ -224,10 +227,14 @@ position  属性  结合 top right bottom left
 
 - ellipsis	显示省略符号来代表被修剪的文本
 
-
-> overflow: hidden; /*隐藏超出文本*/
->
-> white-space: nowrap; /*强制单行显示*/
+- > 一般结合使用
+  >
+  > ```
+  >  /*超出2行就替换为省略号*/
+  > overflow:hidden;/*隐藏超出文本*/
+  > text-overflow: ellipsis;
+  > -webkit-line-clamp: 2;
+  > ```
 
 **圆角边框**
 
@@ -281,7 +288,9 @@ position  属性  结合 top right bottom left
         background-color: #ffd8a6;
         animation-name: action;
         animation-duration: 9s;
+        /*持续时间*/
         animation-iteration-count: 10;
+        /*iteration-count动画循环次数，infinite使无限循环*/
       }
       @keyframes action {
         0% {

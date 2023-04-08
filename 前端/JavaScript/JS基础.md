@@ -23,11 +23,57 @@
 **数据类型**
 
 - **基本数据类型**：字符串（string）、数字（number）、布尔（boolean）、空（null）、未定义（undefined）。
-- **引用数据类型**：对象（object）。
-
-查看数据类型  `typeof`  关键字
+- **引用数据类型**：Array、Object、Date、RegExp。
 
 全等（===）	当全等号左右两边的操作数相等且类型相同时，返回 true。
+
+字符串 `repeat()`  构造并返回一个新字符串
+
+```
+str.repeat(count)
+```
+
+> 判断对象为空
+>
+> ```
+> function isEmptyObject(obj) {
+> for (let o in obj) {
+> return false;
+> }
+> return true;
+> }
+> ```
+>
+> - keys() 返回 Map 对象中键的数组。
+>
+> - values() 返回 Map 对象中值的数组。
+>
+> - entries() 返回由键值对组成的数组
+>
+> 对象转换为数组  `Object.keys()`
+>
+> ```
+> function isEmptyObject(obj) {
+> 	return Object.keys(obj).length === 0;
+> }
+> //但是如果传入null或undefined会出问题
+> isEmptyObject(null); // Uncaught TypeError: Cannot convert undefined or null to object
+> isEmptyObject(undefined); // Uncaught TypeError: Cannot convert undefined or null to object
+> //在实际项目中，如下方式使用
+> function isEmptyObject(obj) {
+> return Object.keys(obj || []).length === 0;
+> }
+> ```
+>
+> 对象转为 `JSON` 字符串   [JSON.stringify()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) 
+>
+> ```
+> function isEmptyObject(obj) {
+>    return JSON.stringify(obj) === "{}";
+> }
+> ```
+>
+> `obj.hasOwnProperty()`  判断对象上是否存在某自有属性
 
 **运算符与表达式**
 
@@ -49,11 +95,22 @@
 
 `document.getElementsByClassName()`
 
+> 选第一个 document.getElementsByClassName('xxx')[0]
+
 `document.getElementsByName()`
 
 `document.querySelector()`
 
 `document.querySelectorAll()`
+
+> 获取到的是一个类数组对象NodeList  ，并非数组，所以无法使用indexOf()之类的方法。
+>
+> ![image-20230403142043260](img/JS基础.assets/image-20230403142043260.png)
+>
+> ```
+> [...document.querySelectorAll(".tabs>div")]
+> 将其转换为数组进行处理
+> ```
 
 `document.write()`
 
@@ -130,7 +187,7 @@ onblur	表单元素失焦时触发
 #### 操作元素内容
 
 ```
-.innerHTML
+.innerHTML  会覆盖掉之前的
 .innerText
 ```
 
@@ -159,10 +216,51 @@ onblur	表单元素失焦时触发
 
 ```
 .className
+.classList.add("样式名")
+.classList.remove("样式名")
 .style.样式
 ```
 
 ## 内置对象
+
+### RegExp
+
+```js
+// g 全局模式
+// i 不区分大小写
+// m 多行模式？
+//字面量形：由斜杠 (/) 包围
+let reg1 = /[bc]at/i;       
+// 匹配第一个"bat"或"cat"，不区分大小写，这里的元字符是有特殊含义，表示其中可以匹配其中任意的字符
+let reg2 = /\[bc\]at/i;     // 匹配第一个" [bc]at"，不区分大小写
+let reg3 = /.at/gi;         // 匹配所有以"at"结尾的 3 个字符的组合，不区分大小写
+let reg4 = /\.at/gi;        // 匹配所有".at"，不区分大小写
+
+//构造函数
+let reg2 = new RegExp("[bc]at", "i");  
+```
+
+```js
+//test()方法
+let reg = new RegExp("e");
+reg.test("The best things in life are free");//true
+
+//exec() 方法
+var text = "cat, bat, sat, fat";
+var pattern2 = /.at/g;
+var matches = pattern2.exec(text);   
+// 返回数组 ["cat", index: 0, input: "cat, bat, sat, fat", groups: undefined]
+alert(matches.index);                // 0
+alert(matches[0]);                   // cat
+alert(pattern2.lastIndex);           // 3
+
+var text = "this has been a short summer";
+var pattern = /(..)or(.)/g;
+if (pattern.test(text)){
+    alert(RegExp.$1);           // sh
+    alert(RegExp.$2);           // t
+}
+```
 
 ### 数组对象Array
 
@@ -173,20 +271,71 @@ var 数组名 = [元素1, 元素2,...,元素n];
 
 `.length` 获取数组长度
 
+`new Array(word.length)`生成`word.length`长度的数组，再`fill('*')`代表将数组内的元素全部设置为symbol的值，再调用`join`转换为字符串
+
+    new Array(长度为五).fill('*').join('')  //*****
 常用方法：
 
-- `slice(x,y)`  数组切片 下标
+- `slice(x,y)`  数组切片下标
+
+  - > 将数组按照置顶个数分割
+    >
+    > ```
+    >   const splitArray = (oldArr, num) => {
+    >     oldArr.sort((x, y) => x - y);
+    >     let res = [];
+    >     for (let i = 0; i < oldArr.length; i += num) {
+    >       console.log(i);
+    >       console.log(i + num);
+    >       res.push(oldArr.slice(i, num + i));
+    >     }
+    >     return res;
+    >   };
+    >   console.log(splitArray([22, 45, 13, 25, 6, 5, 10, 76, 15, 34, 66, 1], 5));
+    > ```
+
 - `unshift()`  数组头部增加新元素
+
 - `shift()`  删除数组首元素
-- `sort()`  对元素进行从小到大排序
-- `reverse()`  逆序排列
+
+- `sort()`  对元素排序
+	- > 是按照ASCII码顺序排序，适用于字母，但不适用于数字，所以不直接使用`sort()`进行排序 
+	  >
+
+	  > `arr1.sort([22, 45, 13, 25, 6, 5, 10, 76, 15, 34, 66, 1])` 会发现从小到大排序错误
+	  >
+	  > `reverse()`  逆序排列  
+	  >
+	  > 对数值进行排序
+	  >
+	  > `oldArr.sort((x, y) => x - y);`  正序排序
+	  >
+	  > `oldArr.sort((x, y) => y - x);`  倒序排序
+
 - `pop()`   删除并返回数组的最后一个元素
+
 - `push()`   像数组末尾添加一个元素，并返回新的长度
+
 - `indexOf()`  查找元素的下标值
 
-- `concat()`  拼接多个数组
+- `splice()` 置顶下标位置添加或删除元素
+
+  - `splice(index)`  从index的位置开始，删除之后的所有元素(包括第index个)
+
+  - `splice(index,个数)`  删除从index位置开始的数
+
+  - > 参数大于三个...
+    >
+    > ```js
+    > splice(元素下标, 删除元素个数(可以为0), 要添加的元素(可以不写))
+    > ```
+
+- `concat()`  合并多个数组，返回新数组
+
 - `join()`   把数组的所有元素放入一个字符串并返回该字符串。可以指定间隔符
+
 - `includes(元素)`  判断该数组中是否包含某个元素
+
 - `数组名.toString()`  数组转换为字符串并返回结构
 
 ````
@@ -206,6 +355,142 @@ console.log(a.toString())
 
 ![image-20221006150609241](img/JS基础.assets/image-20221006150609241.png)
 
+#### array.map()方法
+
+`array.map(function(item,index,arr), thisValue)`
+
+返回一个新数组，不会改变原有数组
+
+- item:数组每一项 (必须)
+- index:每项索引 (可选)
+- arr：数组本身 (可选)
+- thisValue：修改循环时的this指向，默认全局对象 (可选)
+
+```
+  //值   索引   数组本身
+  let newArr = arr.map((val, index, array) => {
+    console.log(val);
+    console.log(index);
+    console.log(array);
+  });
+```
+
+结合Array.from使用
+
+定义数组长度,然后自增,就能指定自增或自减
+
+```
+console.log(Array.from({ length: 4 }).map((item, i) => i + 1)); //[1, 2, 3, 4]
+console.log(Array.from({ length: 4 }).map((item, i) => 4 - i)); // [4, 3, 2, 1]
+```
+
+遍历该数组，并处理数据
+
+需要返回新数组时使用，否则请用请用forEach或者forof替代
+
+```
+  let list = [
+    { name: "张三", age: 18 },
+    { name: "李四", age: 19 },
+    { name: "王五", age: 20 },
+    { name: "老六", age: 66 },
+  ];
+  newArr = list.map((obj) => obj.name).join(",");
+  console.log(newArr);
+```
+
+
+#### array.filter() 方法
+
+`array.filter(function(currentValue,index,arr), thisValue)`
+
+#### array.reduce()方法
+
+`reduce()` 方法对数组中的每个元素按序执行一个由您提供的 reducer 函数，每一次运行 reducer 会将先前元素的计算结果作为参数传入，最后将其结果汇总为单个返回值。
+
+计算数组中元素出现个数
+
+```
+  let names = ["Alice", "Bob", "Tiff", "Bruce", "Alice"];
+  let countedNames = names.reduce(function (allNames, name) {
+    if (name in allNames) {
+      allNames[name]++;
+    } else {
+      allNames[name] = 1;
+    }
+    return allNames;
+  }, {});
+  console.log(countedNames);
+```
+
+根据属性对Obj进行分类
+
+```
+  let people = [
+    { name: "Alice", age: 21 },
+    { name: "Max", age: 20 },
+    { name: "Jane", age: 20 },
+  ];
+  function groupBy(objectArray, property) {
+    return objectArray.reduce(function (acc, obj) {
+      let key = obj[property];
+      if (!acc[key]) {
+        acc[key] = [];
+      }
+      acc[key].push(obj);
+      return acc;
+    }, {});
+  }
+  let groupedPeople = groupBy(people, "age");
+```
+
+结合三元运算符，处理数据为键值对模式
+
+```
+  let data = [
+    {
+      id: 1001,
+      title: "让我们一起写一个前端监控系统吧！",
+      replayCount: 14,
+      clickCount: 3612,
+    },
+    {
+      id: 1002,
+      title: "花了一天的时间，地板式扫盲了vue3所有API盲点",
+      replayCount: 21,
+      clickCount: 9812,
+    },
+    {
+      id: 1003,
+      title: "我被骂了，但我学会了如何构造高性能的树状结构🔥",
+      replayCount: 8,
+      clickCount: 973,
+    },
+  ];
+  let titleList = data.reduce(
+    (acc, cur) => (
+      acc[cur.id] ? acc[cur.id].push(cur.title) : (acc[cur.id] = [acc]), acc
+    ),
+    {}
+  );
+  //得到{1001:"让我们一起写一个前端监控系统吧！",1002:"花了一天的时间，地板式扫盲了vue3所有API盲点",1003:"我被骂了，但我学会了如何构造高性能的树状结构🔥"}
+```
+
+### JSON对象
+
+`JSON.stringify()`
+
+`JSON.parse()`
+
+```
+  console.log(JSON.stringify(data));
+  //localStorage/sessionStorage默认只能存储字符串
+  //json.stringify()对象转为字符串
+  window.localStorage.setItem("name", JSON.stringify(data));
+  //json.parse()转回对象
+  console.log(JSON.parse(window.localStorage.getItem("name")));
+```
+
 ### 字符串对象String
 
 `字符串.charAt(下标值)`   返回在指定下标的字符
@@ -217,6 +502,18 @@ console.log(a.toString())
 `substring(x,y)`  提取字符串中两个指定的下标之间的字符
 
 `replace(x,y)`   替换字串
+
+```
+str = str.replace(reg, function (word, index) {
+	//index下标
+	return symbol.repeat(word.length);
+});
+//高级用法，相当高级！！！
+"12345678910".replace(/\d(?=(\d{3})+$)/g, `$&,`)
+//12,345,678,910
+```
+
+`match(reg)`  字符串内检索指定的值，或找到一个或多个正则表达式的匹配，返回数组
 
 `split()`   使用指定的分隔符将一个字符串分割成子字符串数组
 
@@ -234,13 +531,13 @@ console.log(a.toString())
 
 `getDate()`    返回在一一个月中的哪天(1~31)
 
-`getDay()`    返回在一一个星期中的哪天**(0~6**),其中星期天为0
+`getDay()`    返回在一个星期中的哪天**(0~6**),其中星期天为0
 
 `getHours()`    返回在一天中的哪个小时(0~23 )
 
-`getMinutes()`    返回在-小时中的哪- 分钟(0~59 )
+`getMinutes()`    返回在一小时中的哪一分钟(0~59 )
 
-`getMonth()`   返回在一年中的哪-月(0~11)
+`getMonth()`   返回在一年中的哪一月(0~11)
 
 `getSeconds()`	返回在一分钟中的哪-秒(0~59)
 
@@ -328,11 +625,19 @@ console.log(a.toString())
 
 **常用方法：**
 
-`ceil() `		返回大于等于数字参数的最小整数，对数字进行上舍人
+`ceil() `		返回大于等于数字参数的最小整数，对数字进行上舍入
 
 `floor()  `		返回小于等于数字参数的最小整数，对数字进行下舍入
 
 `random()`	返回一个[0,1]的随机小数
+
+```
+Math.round(Math.random()); //随机获取0和1
+//随机获取 x~y 之间的一个整数
+Math.round(Math.random()*(y-x)+x)
+// 1～x 之间的一个整数
+Math.ceil(Math.random()*x)
+```
 
 `abs()`			返回一个数的绝对值。
 
@@ -475,3 +780,18 @@ httpRequest.onreadystatechange = function () {
 - 2 代表请求被接受。
 - 3 代表请求中。
 - 4 代表请求完成。
+
+## axios
+
+> 需要异步(没讲清)
+
+```
+(async () => {
+  let data = [];
+  await axios.get('js/carlist.json').then(res => {
+    data = res.data;
+  })
+  console.log(data);
+)();
+```
+

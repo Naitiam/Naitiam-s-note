@@ -14,6 +14,8 @@ transform: rotate(45deg);
 
 **transition: property duration timing-function delay;**
 
+> 不全！！！！！！！！！！！！！
+
 property ：css属性的名称
 
 duration ：多长时间完成

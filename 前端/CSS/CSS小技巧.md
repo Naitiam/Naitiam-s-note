@@ -14,9 +14,60 @@
 
 ### div居中
 
-div左右居中  margin:0 auto
+margin:0 auto
 
-https://www.cnblogs.com/jundong/p/8969622.html
+
+
+```
+  用在父组件上
+  display: flex;
+  justify-content: center;
+  align-items: center;
+```
+
+使用定位加margin:auto
+
+```
+.parent {
+	width: 300px;
+	height: 300px;
+	border: 1px solid pink;
+	position: relative;
+}
+
+.son {
+	width: 100px;
+	height: 100px;
+	background-color: red;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}
+```
+
+使用flex布局+margin:auto
+
+```
+.parent {
+	width: 300px;
+	height: 300px;
+	border: 1px solid pink;
+	display: flex;
+}
+
+.son {
+	width: 100px;
+	height: 100px;
+	background-color: red;
+	margin: auto;
+}
+
+```
+
+https://blog.csdn.net/qq_40951289/article/details/104621645
 
 =========================================================================
 
@@ -32,7 +83,7 @@ https://www.cnblogs.com/jundong/p/8969622.html
 
 =========================================================================
 
-### z-index 
+### z-index只对定位元素奏效 
 
 z-index 属性设置元素的堆叠顺序 ,数值越大越在最上层，仅能在定位元素上奏效（例如 position:absolute;）
 
