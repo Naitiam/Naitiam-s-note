@@ -4,16 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "03a3ed014a9a4b89",
+        "id": "232f940ace661282",
         "type": "leaf",
         "state": {
-          "type": "markdown",
-          "state": {
-            "file": "前端框架技术/Vue/Vue.md",
-            "mode": "source",
-            "backlinks": true,
-            "source": false
-          }
+          "type": "empty",
+          "state": {}
         }
       }
     ],
@@ -78,7 +73,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "前端框架技术/Vue/Vue.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,7 +89,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "前端框架技术/Vue/Vue.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -117,9 +110,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "前端框架技术/Vue/Vue.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -129,17 +120,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "03a3ed014a9a4b89",
+  "active": "232f940ace661282",
   "lastOpenFiles": [
-    "前端框架技术/Vue/初识 MVVM 数据绑定.md",
+    "前端/ES6语法/相关题目.md",
+    "前端/ES6语法/偷梁换柱T.md",
+    "前端/性能优化/前端性能优化.md",
+    "找工作/笔试题/20230508.md",
+    "摸鱼/模型哪里来.md",
+    "摸鱼/字体哪里来.md",
+    "前端框架技术/Vue/配置代理.md",
+    "学校/数据结构/栈.md",
     "前端框架技术/Vue/Vue.md",
-    "前端框架技术/Vue/过渡与动画.md",
-    "前端/Vue/Vue.md",
-    "前端/ES6语法/解构赋值.md",
-    "前端/ES6语法/函数.md",
-    "前端/ES6语法/模板字符串.md",
-    "前端/ES6语法/const与var.md",
-    "前端/JQuery/JQ基础.md",
-    "前端/Vue/随手笔记.md"
+    "前端框架技术/Vue/初识 MVVM 数据绑定.md"
   ]
 }
