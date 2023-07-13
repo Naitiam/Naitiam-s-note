@@ -1,3 +1,12 @@
+## 初始化git
+
+名称要和github上的保持一致，不然push上去的账号会不一致
+
+```git
+git config --global user.email "mugibatake99@gmail.com"
+git config --global user.name "maiiitian"
+```
+
 ## 重新连Github
 
 `ssh-keygen -t rsa -C “naitiam@LAPTOP-VBII6AMA”`  (执行后一直回车就可以了)    生成新的公钥
@@ -62,6 +71,12 @@ Hi maiiitian! You've successfully authenticated, but GitHub does not provide she
 ![image-20230423131150538](img/上传代码到Github.assets/image-20230423131150538.png)
 
 在.git目录下删除index.lock文件
+
+![image-20230713183433054](G:\Naitiam-s-note\coding\Git\img\上传代码到Github.assets\image-20230713183433054.png)
+
+想要链接到远程仓库，报权限变更
+
+` git config --global  --add   safe.directory '*'`
 
 ## 管理工具SublimeMerge
 
