@@ -1,3 +1,11 @@
+---
+name: Git基础操作
+---
+
+
+
+> https://www.runoob.com/git/git-tutorial.html
+
 ## 初始化git
 
 名称要和github上的保持一致，不然push上去的账号会不一致
@@ -24,6 +32,10 @@ Hi maiiitian! You've successfully authenticated, but GitHub does not provide she
 `git clone git@github.com:maiiitian/ ` 克隆远程仓库到本地
 
 `git remote add origin git@github.com:`  添加远程地址**（使用ssh方式每次push不需要登录**
+
+> git pull <远程主机名> <远程分支名>:<本地分支名>
+
+`git pull origin master`   从远程获取代码并合并本地的版本 
 
 `git remote -v`  查看远程仓库地址
 
