@@ -70,11 +70,11 @@ npx husky add .husky/pre-commit "echo "Hello,world""  # （.husky文件夹下出
 
 `git add . `   然后 `git commit -m "test" `去测试一下
 
-![image-20230719022210369](img\Vue3项目框架搭建.assets\image-20230719022210369.png)
+![image-20230719022210369](img/Vue3项目框架搭建.assets/image-20230719022210369.png)
 
 后期一步步测试
 
-![image-20230719022342867](img\Vue3项目框架搭建.assets\image-20230719022342867.png)
+![image-20230719022342867](img/Vue3项目框架搭建.assets/image-20230719022342867.png)
 
 >**常用的 git hooks：**
 >
@@ -114,7 +114,7 @@ pnpm i prettier eslint-config-prettier eslint-plugin-prettier -D
 
 执行 `npx eslint --init`  ，选择配置，创建 `.eslintrc` 配置文件
 
-![image-20230718181241579](img\Vue3项目框架搭建.assets\image-20230718181241579.png)
+![image-20230718181241579](img/Vue3项目框架搭建.assets/image-20230718181241579.png)
 
 安装完成后，后面的启动项目还缺少一些依赖，提前按需安装好
 ```
@@ -711,7 +711,7 @@ windows平台进行 git add 时，控制台打印警告
 
 LF will be replaced by CRLF the next time Git touches it
 
-![image-20230718210711266](img\Vue3项目框架搭建.assets\image-20230718210711266.png)
+![image-20230718210711266](img/Vue3项目框架搭建.assets/image-20230718210711266.png)
 
 问题分析：
 
@@ -754,8 +754,8 @@ git config --global core.autocrlf false
 
 ## 涉及插件
 
-![image-20230718223603147](img\Vue3项目框架搭建.assets\image-20230718223603147.png)
+![image-20230718223603147](img/Vue3项目框架搭建.assets/image-20230718223603147.png)
 
-![image-20230718223613817](img\Vue3项目框架搭建.assets\image-20230718223613817.png)
+![image-20230718223613817](img/Vue3项目框架搭建.assets/image-20230718223613817.png)
 
-![image-20230718223624525](img\Vue3项目框架搭建.assets\image-20230718223624525.png)
+![image-20230718223624525](img/Vue3项目框架搭建.assets/image-20230718223624525.png)
