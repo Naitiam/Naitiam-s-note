@@ -2,17 +2,24 @@
 name: Git基础操作
 ---
 
-
-
 > https://www.runoob.com/git/git-tutorial.html
 
 ## 初始化git
 
 名称要和github上的保持一致，不然push上去的账号会不一致
 
+github
+
 ```git
 git config --global user.email "mugibatake99@gmail.com"
 git config --global user.name "maiiitian"
+```
+
+gitee的，呃呃呃呃传完记得改回上面的
+
+```
+git config --global user.name "Naitiam"
+git config --global user.email "12336757+naitiam@user.noreply.gitee.com"
 ```
 
 ## 重新连Github
@@ -32,6 +39,8 @@ Hi maiiitian! You've successfully authenticated, but GitHub does not provide she
 `git clone git@github.com:maiiitian/ ` 克隆远程仓库到本地
 
 `git remote add origin git@github.com:`  添加远程地址**（使用ssh方式每次push不需要登录**
+
+`git remote rm origin` 删除远程地址
 
 > git pull <远程主机名> <远程分支名>:<本地分支名>
 
