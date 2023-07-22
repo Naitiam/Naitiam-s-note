@@ -1,0 +1,156 @@
+{
+  "main": {
+    "id": "891f6cd9b6b26512",
+    "type": "split",
+    "children": [
+      {
+        "id": "41e3f5020d49f314",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4d5143fcf3945ec8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "框架技术/Vue3项目框架搭建.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "856a84fd8e2b7921",
+    "type": "split",
+    "children": [
+      {
+        "id": "066eee74ba2e8ccf",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3bb25bff2c8b03b3",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "517925b2d49f18ea",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "框架技术/Vue3项目框架搭建.md"
+              }
+            }
+          },
+          {
+            "id": "7200a91a93d4983d",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "tag:#cf0fff",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "b596ffd1da6c63ee",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 235.5
+  },
+  "right": {
+    "id": "b5c3b34dc91fba5c",
+    "type": "split",
+    "children": [
+      {
+        "id": "deafa56261fc6879",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "30d5386f6d66f8d1",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "框架技术/Vue3项目框架搭建.md",
+                "collapseAll": true,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "ecd17ca956b3d4eb",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "框架技术/Vue3项目框架搭建.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "dc7ac92c54bc25a5",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": true,
+      "command-palette:打开命令面板": false
+    }
+  },
+  "active": "3bb25bff2c8b03b3",
+  "lastOpenFiles": [
+    "框架技术/Vue3项目框架搭建.md",
+    "学校/Linux/基础操作命令.md",
+    "前端项目/MaitUI组件库/搭建项目环境.md",
+    "前端项目/#待定项目.md",
+    "未命名.canvas",
+    "未命名 1.canvas"
+  ]
+}
