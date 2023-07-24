@@ -13,8 +13,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "框架技术/Vue3项目框架搭建.md",
-                "mode": "source",
+                "file": "前端项目/MaitUI组件库/搭建项目环境.md",
+                "mode": "preview",
                 "source": false
               }
             }
@@ -48,7 +48,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "框架技术/Vue3项目框架搭建.md"
+                "file": "前端项目/MaitUI组件库/搭建项目环境.md"
               }
             }
           },
@@ -75,11 +75,12 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 235.5
+    "width": 225.5
   },
   "right": {
     "id": "b5c3b34dc91fba5c",
@@ -95,7 +96,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "框架技术/Vue3项目框架搭建.md",
+                "file": "前端项目/MaitUI组件库/搭建项目环境.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -112,7 +113,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "框架技术/Vue3项目框架搭建.md",
+                "file": "前端项目/MaitUI组件库/搭建项目环境.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -144,12 +145,23 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "3bb25bff2c8b03b3",
+  "active": "4d5143fcf3945ec8",
   "lastOpenFiles": [
-    "框架技术/Vue3项目框架搭建.md",
-    "学校/Linux/基础操作命令.md",
+    "框架技术/Vite项目框架搭建.md",
     "前端项目/MaitUI组件库/搭建项目环境.md",
     "前端项目/#待定项目.md",
+    "README.md",
+    "框架技术/Vite/VitePress.md",
+    "框架技术/Vite/Vite之坑.md",
+    "框架技术/Vite/img/VitePress.assets/image-20230722150957111.png",
+    "框架技术/Vite/img/VitePress.assets",
+    "框架技术/Vite/img/Pasted image 20230722150505.png",
+    "前端/ES6语法/函数.md",
+    "前端/ES6语法/对象方法扩展.md",
+    "前端/ES6语法/迭代器.md",
+    "框架技术/Vite/未命名",
+    "新建 文本文档.txt",
+    "学校/Linux/基础操作命令.md",
     "未命名.canvas",
     "未命名 1.canvas"
   ]

@@ -1,9 +1,10 @@
 ---
-name: Vue3项目框架搭建额
+name: Vite项目框架搭建
 ---
 
 
 > 需要根据项目要求做出更改
+> 
 > github.com/maiiitian/standard-dev-app
 
 创建一个统一风格的、规范化的项目对于一个团队来说至关重要。
@@ -33,6 +34,22 @@ https://cn.vitejs.dev/guide/
 ```
 pnpm create vite standard-dev-app --template vue-ts
 cd standard-dev-app
+```
+
+在 Node.js 生态系统中，`.npmrc` 是一个配置文件，用于指定 npm（Node Package Manager）的行为和选项。
+
+在项目的根目录下建立 `.npmrc` 文件。
+
+```
+# 强制 npm 在安装依赖时忽略某些不适合进行 Hoisting（提升）的情况，统一采用 Hoisting 方式，可能绕过一些问题但潜在地引入其他兼容性问题。
+shamefully-hoist = true  
+#  在 npm 安装依赖时，自动安装其所需的 peerDependencies（同等依赖），简化依赖管理，但需要注意可能会引起版本冲突。
+auto-install-peers=true
+```
+
+安装包
+
+```
 pnpm install
 pnpm run dev
 
@@ -45,7 +62,7 @@ export default defineConfig({
     open: true //自动打开浏览器
   }
 })
-```
+````
 
 ## 2. husky
 
@@ -71,11 +88,11 @@ npx husky add .husky/pre-commit "echo "Hello,world""
 
 `git add . `   然后 `git commit -m "test" `去测试一下
 
-![image-20230719022210369](img/Vue3项目框架搭建.assets/image-20230719022210369.png)
+![image-20230719022210369](img/Vite项目框架搭建.assets/image-20230719022210369.png)
 
 后期一步步测试
 
-![image-20230719022342867](img/Vue3项目框架搭建.assets/image-20230719022342867.png)
+![image-20230719022342867](img/Vite项目框架搭建.assets/image-20230719022342867.png)
 
 >**常用的 git hooks：**
 >
@@ -115,7 +132,7 @@ pnpm i eslint-config-prettier eslint-plugin-prettier -D
 
 执行 `npx eslint --init`  ，选择配置，创建 `.eslintrc` 配置文件
 
-![image-20230718181241579](img/Vue3项目框架搭建.assets/image-20230718181241579.png)
+![image-20230718181241579](img/Vite项目框架搭建.assets/image-20230718181241579.png)
 
 安装完成后，后面的启动项目还缺少一些依赖，提前按需安装好
 ```
@@ -275,6 +292,13 @@ components.d.ts
 ```
 
 ## 4.  stylelint 样式校验
+
+首先安装  [Less](https://link.juejin.cn/?target=https%3A%2F%2Flesscss.org%2F)  或 [Sass](https://link.juejin.cn/?target=https%3A%2F%2Fsass-lang.com%2F)
+
+```
+pnpm install -D less
+pnpm install -D sass
+```
 
 CSS 检查器(linter)
 
@@ -777,7 +801,7 @@ windows平台进行 git add 时，控制台打印警告
 
 LF will be replaced by CRLF the next time Git touches it
 
-![image-20230718210711266](img/Vue3项目框架搭建.assets/image-20230718210711266.png)
+![image-20230718210711266](img/Vite项目框架搭建.assets/image-20230718210711266.png)
 
 问题分析：
 
@@ -820,9 +844,9 @@ git config --global core.autocrlf false
 
 ## 涉及插件
 
-![image-20230718223603147](img/Vue3项目框架搭建.assets/image-20230718223603147.png)
+![image-20230718223603147](img/Vite项目框架搭建.assets/image-20230718223603147.png)
 
-![image-20230718223613817](img/Vue3项目框架搭建.assets/image-20230718223613817.png)
+![image-20230718223613817](img/Vite项目框架搭建.assets/image-20230718223613817.png)
 
-![image-20230718223624525](img/Vue3项目框架搭建.assets/image-20230718223624525.png)
+![image-20230718223624525](img/Vite项目框架搭建.assets/image-20230718223624525.png)
 

@@ -1,7 +1,8 @@
 {
-  "accentColor": "#bababa",
+  "accentColor": "",
   "theme": "moonstone",
   "translucency": false,
   "nativeMenus": false,
-  "cssTheme": "GitHub Theme"
+  "cssTheme": "Blue Topaz",
+  "baseFontSize": 14
 }

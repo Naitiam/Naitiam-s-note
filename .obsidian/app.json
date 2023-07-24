@@ -1,1 +1,17 @@
-{}
+{
+  "focusNewTab": true,
+  "defaultViewMode": "preview",
+  "readableLineLength": false,
+  "showLineNumber": false,
+  "rightToLeft": false,
+  "promptDelete": false,
+  "livePreview": true,
+  "newLinkFormat": "relative",
+  "attachmentFolderPath": "./img/搭建项目环境.assets",
+  "useMarkdownLinks": true,
+  "newFileLocation": "current",
+  "strictLineBreaks": true,
+  "autoConvertHtml": false,
+  "showFrontmatter": false,
+  "alwaysUpdateLinks": true
+}
