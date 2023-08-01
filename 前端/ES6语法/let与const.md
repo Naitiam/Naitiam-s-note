@@ -2,6 +2,34 @@
 
 > 主要是let与const
 
+### var
+
+- var定义的变量可以修改，如果不初始化会输出undefined，不会报错。
+- 变量提升：只提升声明，不提升赋值 
+
+```
+  console.log(num);//undefined
+  var num = 10;
+```
+
+```
+  var num;
+  console.log(num); //10
+  num = 10;
+```
+
+```javascript
+    var a = 1;
+    // var a;//不会报错
+    console.log('函数外var定义a：' + a);//可以输出a=1
+    function change(){
+        a = 4;
+        console.log('函数内var定义a：' + a);//可以输出a=4
+    }
+    change();
+    console.log('函数调用后var定义a为函数内部修改值：' + a);//可以输出a=4
+```
+
 ### let
 
 - 没有变量提升：在声明前调用会报错
@@ -63,18 +91,3 @@
     console.log(window.RegExp);
 ```
 
-### var
-
-**var定义的变量可以修改，如果不初始化会输出undefined，不会报错。**
-
-```javascript
-    var a = 1;
-    // var a;//不会报错
-    console.log('函数外var定义a：' + a);//可以输出a=1
-    function change(){
-        a = 4;
-        console.log('函数内var定义a：' + a);//可以输出a=4
-    }
-    change();
-    console.log('函数调用后var定义a为函数内部修改值：' + a);//可以输出a=4
-```

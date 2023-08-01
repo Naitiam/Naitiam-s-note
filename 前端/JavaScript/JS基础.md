@@ -48,7 +48,7 @@ str.repeat(count)
 >
 > - values() 返回 Map 对象中值的数组。
 >
-> - entries() 返回由键值对组成的数组
+> - entries() 返回由键值对组成的数组。
 >
 > 对象转换为数组  `Object.keys()`
 >

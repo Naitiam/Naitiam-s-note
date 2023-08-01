@@ -11,7 +11,7 @@ name: Vite项目框架搭建
 
 项目在提交commit时，使用了commitlint & husky 对提交信息进行规范。
 
-在编写代码时，使用eslint + prettier + stylelint + *ls-lint* 对目录命名和代码风格质量进行限制和格式化。
+在编写代码时，使用eslint + prettier + stylelint + ls-lint 对目录命名和代码风格质量进行限制和格式化。
 
 > thanks:
 >
@@ -143,7 +143,7 @@ pnpm install typescript @typescript-eslint/parser @typescript-eslint/eslint-plug
 - @typescript-eslint/eslint-plugin     eslint插件，包含了各类定义好的检测typescript代码的规范
 - eslint-import-resolver-alias			让我们可以用import的时候使用@别名
 
-###  `eslintrc.cjs `配置
+###  `.eslintrc.cjs `配置
 
 > 因为`eslint`是 node 工具，所以文件名是`.cjs`结尾(commonjs 规范)——对应的
 >
