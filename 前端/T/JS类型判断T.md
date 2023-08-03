@@ -31,6 +31,7 @@ const testArr = [
   - 无法判断除了 `function` 之外的引用类型。
 - `instanceof`
   - `instanceof` 可以判断引用类型
+  - `instanceof` 运算符用来检测 `constructor.prototype`  是否存在于参数 `object ` 的原型链上。
 
 ```
 function getType(data) {

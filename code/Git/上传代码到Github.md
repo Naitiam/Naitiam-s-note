@@ -12,12 +12,6 @@ github
 
 ```git
 git config --global user.email "mugibatake99@gmail.com"
-git config --global user.name "maiiitian"
-```
-
-gitee的，呃呃呃呃传完记得改回上面的
-
-```
 git config --global user.name "Naitiam"
 ```
 
@@ -92,11 +86,26 @@ Hi maiiitian! You've successfully authenticated, but GitHub does not provide she
 
 在.git目录下删除index.lock文件
 
-![image-20230713183433054](G:\Naitiam-s-note\coding\Git\img\上传代码到Github.assets\image-20230713183433054.png)
+![image-20230713183433054](.\img\上传代码到Github.assets\image-20230713183433054.png)
 
 想要链接到远程仓库，报权限变更
 
 ` git config --global  --add   safe.directory '*'`
+
+## .gitignore文件不生效
+
+原因：已经提交过的文件或者文件夹怎么办？此时更改.gitignore文件对已经提交的文件是无效的
+
+解决方法：
+
+```
+git rm -r --cached .
+git add .
+git commit -m "chore(gitignore):清除git缓存，解决gitignore问题"
+git push
+```
+
+`git rm -r --cached .` 命令，会从 Git 的索引（也称为暂存区或 staging area）中移除文件和目录，但不会从工作目录中删除它们。
 
 ## 管理工具SublimeMerge
 

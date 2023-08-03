@@ -41,5 +41,11 @@ export default {
 └─ package.json
 ```
 
+无法自动生成侧边栏
+
+```
+https://github.com/QC2168/vite-plugin-vitepress-auto-sidebar
+```
+
 
 

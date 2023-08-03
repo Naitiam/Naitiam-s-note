@@ -48,6 +48,7 @@ play-state：指定动画是否正在运行或已暂停。
 
 ![截图](img/transitioan,transform,animate的区别.assets/截图.png)
 
+```css
 @-webkit-keyframes mycolor{
 
 ​            0%{
@@ -119,3 +120,4 @@ play-state：指定动画是否正在运行或已暂停。
 ​            -webkit-animation-iteration-count: infinite;
 
 ​        }
+```

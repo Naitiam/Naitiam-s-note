@@ -1,3 +1,11 @@
+---
+title: JS基础
+tags:
+  - JS
+---
+
+> https://developer.mozilla.org/zh-CN/
+
 `console.log()  `控制台输出
 
 `alert() `  对话框
@@ -22,66 +30,23 @@
 
 **数据类型**
 
+| 区别     | 基本类型   | 引用数据     |
+| -------- | ---------- | ------------ |
+| 存储方式 | 栈内存     | 堆内存       |
+| 赋值方式 | 重新创建值 | 复制引用地址 |
+
 - **基本数据类型**：字符串（string）、数字（number）、布尔（boolean）、空（null）、未定义（undefined）。
-- **引用数据类型**：Array、Object、Date、RegExp。
-
-全等（===）	当全等号左右两边的操作数相等且类型相同时，返回 true。
-
-字符串 `repeat()`  构造并返回一个新字符串
-
-```
-str.repeat(count)
-```
-
-> 判断对象为空
->
-> ```
-> function isEmptyObject(obj) {
-> for (let o in obj) {
-> return false;
-> }
-> return true;
-> }
-> ```
->
-> - keys() 返回 Map 对象中键的数组。
->
-> - values() 返回 Map 对象中值的数组。
->
-> - entries() 返回由键值对组成的数组。
->
-> 对象转换为数组  `Object.keys()`
->
-> ```
-> function isEmptyObject(obj) {
-> 	return Object.keys(obj).length === 0;
-> }
-> //但是如果传入null或undefined会出问题
-> isEmptyObject(null); // Uncaught TypeError: Cannot convert undefined or null to object
-> isEmptyObject(undefined); // Uncaught TypeError: Cannot convert undefined or null to object
-> //在实际项目中，如下方式使用
-> function isEmptyObject(obj) {
-> return Object.keys(obj || []).length === 0;
-> }
-> ```
->
-> 对象转为 `JSON` 字符串   [JSON.stringify()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) 
->
-> ```
-> function isEmptyObject(obj) {
->    return JSON.stringify(obj) === "{}";
-> }
-> ```
->
-> `obj.hasOwnProperty()`  判断对象上是否存在某自有属性
+- **引用数据类型**：Array、Object、Function、Date、RegExp。
 
 **运算符与表达式**
 
-- 算术运算符：+、-、*、/、%、++、--
-- 比较运算符：>、<、>=、<=、==、!=、===、!==
-- 赋值运算符：=、+=、-=、*=、/=
-- 逻辑运算符：&&、||、!
-- 条件运算符：条件表达式 ? 表达式 1 : 表达式 2
+- 算术运算符：`+、-、*、/、%、++、--`
+- 比较运算符：`>、<、>=、<=、==、!=、===、!==`
+- 赋值运算符：`=、+=、-=、*=、/=`
+- 逻辑运算符：`&&、||、!`
+- 条件运算符：`条件表达式 ? 表达式 1 : 表达式 2`
+
+全等（`===`）	当全等号左右两边的操作数相等且类型相同时，返回 true。
 
 ## DOM文档对象模型
 
@@ -117,7 +82,6 @@ str.repeat(count)
 ### DOM事件 ! ! !
 
 [HTML DOM 事件对象 | 菜鸟教程 (runoob.com)](https://www.runoob.com/jsref/dom-obj-event.html)
-
 
 #### 事件监听与移除
 
@@ -223,6 +187,64 @@ onblur	表单元素失焦时触发
 
 ## 内置对象
 
+> JavaScript的内置对象是指在JavaScript语言中自动提供的一组预定义对象，它们具有一些常用的属性和方法，可以直接在代码中使用。
+
+### Object
+
+> JavaScript的基本对象，所有其他对象都是从Object继承而来。
+
+判断对象为空
+
+```
+function isEmptyObject(obj) {
+for (let o in obj) {
+return false;
+}
+return true;
+}
+```
+
+- keys() 返回 Map 对象中键的数组。
+
+- values() 返回 Map 对象中值的数组。
+
+- entries() 返回由键值对组成的数组。
+
+对象转换为数组  `Object.keys()`
+
+```
+function isEmptyObject(obj) {
+	return Object.keys(obj).length === 0;
+}
+//但是如果传入null或undefined会出问题
+isEmptyObject(null); // Uncaught TypeError: Cannot convert undefined or null to object
+isEmptyObject(undefined); // Uncaught TypeError: Cannot convert undefined or null to object
+//在实际项目中，如下方式使用
+function isEmptyObject(obj) {
+return Object.keys(obj || []).length === 0;
+}
+```
+
+对象转为 `JSON` 字符串   [JSON.stringify()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) 
+
+```
+function isEmptyObject(obj) {
+   return JSON.stringify(obj) === "{}";
+}
+```
+
+`obj.hasOwnProperty()`  判断对象上是否存在某自有属性
+
+` Object.assign(target, ...sources)` 将 `sources` 中所有的源对象的可枚举属性复制到目标对象 `target` 中, 最后返回修改后的 `target` 对象。浅拷贝！！
+
+```
+  const obj = {name: "AAA"};
+  const obj3 = {};
+  Object.assign(obj3, obj);
+```
+
+[对象方法扩展](../ES6/对象方法扩展.md)
+
 ### RegExp
 
 ```js
@@ -262,7 +284,7 @@ if (pattern.test(text)){
 }
 ```
 
-### 数组对象Array
+### Array
 
 ```
 var 数组名 = new Array(元素1, 元素2,...,元素n);
@@ -330,7 +352,7 @@ var 数组名 = [元素1, 元素2,...,元素n];
     > splice(元素下标, 删除元素个数(可以为0), 要添加的元素(可以不写))
     > ```
 
-- `concat()`  合并多个数组，返回新数组
+- `concat()`  合并多个数组，返回新数组。
 
 - `join()`   把数组的所有元素放入一个字符串并返回该字符串。可以指定间隔符
 
@@ -355,7 +377,7 @@ console.log(a.toString())
 
 ![image-20221006150609241](img/JS基础.assets/image-20221006150609241.png)
 
-#### array.map()方法
+#### map()方法
 
 `array.map(function(item,index,arr), thisValue)`
 
@@ -375,7 +397,7 @@ console.log(a.toString())
   });
 ```
 
-结合Array.from使用
+结合 `Array.from` 使用
 
 定义数组长度,然后自增,就能指定自增或自减
 
@@ -399,12 +421,11 @@ console.log(Array.from({ length: 4 }).map((item, i) => 4 - i)); // [4, 3, 2, 1]
   console.log(newArr);
 ```
 
-
-#### array.filter() 方法
+#### filter() 方法
 
 `array.filter(function(currentValue,index,arr), thisValue)`
 
-#### array.reduce()方法
+#### reduce()方法
 
 `reduce()` 方法对数组中的每个元素按序执行一个由您提供的 reducer 函数，每一次运行 reducer 会将先前元素的计算结果作为参数传入，最后将其结果汇总为单个返回值。
 
@@ -476,7 +497,8 @@ console.log(Array.from({ length: 4 }).map((item, i) => 4 - i)); // [4, 3, 2, 1]
   //得到{1001:"让我们一起写一个前端监控系统吧！",1002:"花了一天的时间，地板式扫盲了vue3所有API盲点",1003:"我被骂了，但我学会了如何构造高性能的树状结构🔥"}
 ```
 
-### JSON对象
+[数组方法扩展](../ES6/数组方法扩展.md)
+### JSON
 
 `JSON.stringify()`
 
@@ -491,7 +513,7 @@ console.log(Array.from({ length: 4 }).map((item, i) => 4 - i)); // [4, 3, 2, 1]
   console.log(JSON.parse(window.localStorage.getItem("name")));
 ```
 
-### 字符串对象String
+### String
 
 `字符串.charAt(下标值)`   返回在指定下标的字符
 
@@ -527,7 +549,7 @@ str = str.replace(reg, function (word, index) {
 
 `substr(起始索引,长度)`   获取字符串的“起始索引”位置至长度的字符
 
-### 日期对象Date
+### Date
 
 `getDate()`    返回在一一个月中的哪天(1~31)
 
@@ -615,7 +637,7 @@ str = str.replace(reg, function (word, index) {
     </body>
 ```
 
-### 数学对象Math
+### Math
 
 > 用于执行常用的数学任务，它包含了若干个数字常量和函数 
 
