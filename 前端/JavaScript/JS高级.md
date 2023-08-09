@@ -10,11 +10,13 @@ tags:
 
 ## 深入基础
 
-
+none
 
 ## 函数
 
 ### 作用域链与闭包
+
+> [JS 闭包经典使用场景和含闭包必刷题](https://juejin.cn/post/6937469222251560990?searchId=20230805163312E353083D9D9E0EA226BF#heading-8)
 
 **作用域**
 
@@ -124,11 +126,13 @@ Object.prototype 的原型是——null，这意味着 Object.prototype 没有�
 
 > thanks：[讲讲什么是浅拷贝、深拷贝?](https://juejin.cn/post/7207090090101866557?searchId=20230803223611D84E60E4FE30B8283AC3)
 
-由于数据类型存储方式的不同，浅拷贝与深拷贝**只针对引用类型**
+由于数据类型存储方式的不同，**深拷贝和浅拷贝是只针对Object和Array这样的引用数据类型的。**
 
 ### 浅拷贝
 
 会新建一个对象，拷贝对象的所有属性值, 对于 **基本数据** 来说就是拷贝一份对应的 **值**，但是对于 **引用数据** 则是拷贝一份 引用数据 的 **引用地址**。
+
+**拷贝对象只有一层时，算是深拷贝**。
 
 - `Object.assign()`
 - 扩展运算符 `...`
@@ -158,7 +162,7 @@ Object.prototype 的原型是——null，这意味着 Object.prototype 没有�
 ```
 
 ```
-  const arr = [1, 2, 3, 4];
+  const arr = [1, 2, 3, 4,{test: 2}];
   const arr2 = arr.concat(6);
   arr2[2] = 5;
   console.log("Array.prototype.concat()");
@@ -176,60 +180,113 @@ const res = _.clone(obj)
 #### 手写浅拷贝
 
 ```js
-const clone = (target) => {
-  // 1. 对于基本数据类型(string、number、boolean……), 直接返回
-  if (typeof target !== 'object' || target === null) {
-    return target
-  }
-  // 2. 创建新对象
-  const cloneTarget = Array.isArray(target) ? [] : {}
-  // 3. 循环 + 递归处理
-  Object.keys(target).forEach(key => {
-    cloneTarget[key] = target[key];
-  })
-  return cloneTarget
-}
-const res= clone({ name: 1, user: { age: 18 } }) 
+  const clone = (target) => {
+    // 1. 对于基本数据类型(string、number、boolean……), 直接返回
+    if (typeof target !== "object" || target === null) {
+      return target;
+    }
+    // 2. 创建新对象
+    const cloneTarget = Array.isArray(target) ? [] : {};
+    // 3. 循环 + 递归处理
+    Object.keys(target).forEach((key) => {
+      cloneTarget[key] = target[key];
+    });
+    return cloneTarget;
+  };
+  const res = clone({ name: 1, user: { age: 18 } });
 ```
 
 ### 深拷贝
 
 创建一个 新对象，拷贝对象的所有属性，如果属性是 基本数据，拷贝的就是 **基本数据** 的 **值**； 如果是 **引用数据**，则需要 **重新分配一块内存** ， 拷贝该 引用数据的所有属性，然后将 引用地址赋值给对应的属性， 如果该 引用数据中某个属性也是 引用数据 则需要继续一层层递归拷贝…
 
-- JSON.parse(JSON.stringify())
+- `JSON.parse(JSON.stringify())`
+  - `NaN` `Infinity` `-Infinity` 会被序列化为 `null`
+  - `Symbol` `undefined` `function` 会被忽略(对应属性会丢失)
+  - `Date` 将得到的是一个字符串
+  - 拷贝 `RegExp` `Error` 对象，得到的是空对象 `{}`
 
 
+```
+  const obj = {
+    name: "AAA",
+    age: 32,
+    children: {
+      name: "aaa",
+      age: 4,
+    },
+    num1: NaN,
+    num2: Infinity,
+    num3: -Infinity,
 
+    symbol: Symbol("xxx"),
+    name: undefined,
+    add: function () {},
 
+    date: new Date(),
 
-#### 手写深拷贝
-
-```js
-// map 用于记录出现过的对象, 解决循环引用
-const deepClone = (target, map = new WeakMap()) => {
-  // 1. 对于基本数据类型(string、number、boolean……), 直接返回
-  if (typeof target !== 'object' || target === null) {
-    return target
-  }
-  // 2. 函数 正则 日期 MAP Set: 执行对应构造题, 返回新的对象
-  const constructor = target.constructor
-  if (/^(Function|RegExp|Date|Map|Set)$/i.test(constructor.name)) {
-    return new constructor(target)
-  }
-  // 3. 解决 共同引用 循环引用等问题
-  // 借用 `WeakMap` 来记录每次复制过的对象, 在递归过程中, 如果遇到已经复制过的对象, 则直接使用上次拷贝的对象, 不重新拷贝
-  if (map.get(target)) {
-    return map.get(target)
-  }
-  // 4. 创建新对象
-  const cloneTarget = Array.isArray(target) ? [] : {}
-  map.set(target, cloneTarget)
-  // 5. 循环 + 递归处理
-  Object.keys(target).forEach(key => {
-    cloneTarget[key] = deepClone(target[key], map);
-  })
-  // 6. 返回最终结果
-  return cloneTarget
-}
+    reg: /a/gi,
+    error: new Error("错误信息"),
+  };
+  console.log("JSON.parse(JSON.stringify())");
+  console.log(JSON.parse(JSON.stringify(obj)));
+  // {
+  //   "age": 32,
+  //   "children": {
+  //       "name": "aaa",
+  //       "age": 4
+  //   },
+  //   "num1": null,
+  //   "num2": null,
+  //   "num3": null,
+  //   "date": "2023-08-04T07:36:04.802Z",
+  //   "reg": {},
+  //   "error": {}
+  // }
 ```
 
+- 使用第三方库 `lodash` 中的 `cloneDeep` 方法
+
+```
+const res = _.cloneDeep(obj)
+```
+
+#### ⚠️手写深拷贝
+
+```js
+  // map 用于记录出现过的对象, 解决循环引用
+  const deepClone = (target, map = new WeakMap()) => {
+    // 1. 对于基本数据类型(string、number、boolean……), 直接返回
+    if (typeof target !== "object" || target === null) {
+      return target;
+    }
+    // 2. 函数 正则 日期 MAP Set: 执行对应构造题, 返回新的对象 
+    //⚠️ 引用对象都有构造属性
+    const constructor = target.constructor;
+    if (/^(Function|RegExp|Date|Map|Set)$/i.test(constructor.name)) {
+      return new constructor(target);
+    }
+    // 3. 解决 共同引用 循环引用等问题
+    // 借用 `WeakMap` 来记录每次复制过的对象, 在递归过程中, 如果遇到已经复制过的对象, 则直接使用上次拷贝的对象, 不重新拷贝
+    if (map.get(target)) {
+      return map.get(target);
+    }
+    // 4. 创建新对象
+    const cloneTarget = Array.isArray(target) ? [] : {};
+    map.set(target, cloneTarget);
+    // 5. 循环 + 递归处理
+    Object.keys(target).forEach((key) => {
+      cloneTarget[key] = deepClone(target[key], map);
+    });
+    // 6. 返回最终结果
+    return cloneTarget;
+  };
+```
+
+## this指向
+
+详情见  [this指向](this指向.md)
+
+## 防抖与节流
+
+详情见  [防抖与节流](防抖与节流.md)

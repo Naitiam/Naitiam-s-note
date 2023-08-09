@@ -4,7 +4,7 @@
 
 ```
 pnpm create vite
-pnpm create vite xxx --template vue
+pnpm create vite xxx --template vue-ts
 cd xxx
 pnpm install
 pnpm run dev
