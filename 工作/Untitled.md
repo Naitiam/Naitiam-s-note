@@ -1,8 +1,8 @@
 以前被问到过的问题
 
-简单的 在页面右下角洗一个button
+简单的 在页面右下角写一个button
 
-还有linux mysql 一些比较难的问题，我不理解为什么因为一个实习生这些
+还有linux mysql 一些比较难的问题，我不理解为什么问一个实习生这些
 
 
 
@@ -35,3 +35,19 @@ nux 介绍相比于 vite vue 框架的进步
 
 
 在使用nestjs框架技术重构博客后端
+
+
+
+校招，非实习生
+
+[合合信息](http://www.intsig.com/recruit)  简历就没过，大概因为这不是实习
+
+[米哈游](https://campus.mihoyo.com/#/campus) 没有前端岗，但是上半年有看到招实习
+
+实习生 
+
+
+
+其他
+
+[鹰角网络校园招聘 (hypergryph.com)](https://campus.hypergryph.com/#/) 没有前端岗
