@@ -1,5 +1,3 @@
-
-
 ## 项目搭建
 
 碰壁无数，最后选择 [electron-vite](https://link.juejin.cn/?target=https%3A%2F%2Fcn.electron-vite.org%2F)
@@ -74,22 +72,4 @@ electron-demo
 
 
 
-
-```
-.
-├──src
-│  ├──main
-│  │  ├──index.ts
-│  │  └──...
-│  ├──preload
-│  │  ├──index.ts
-│  │  └──...
-│  └──renderer    # with vue, react, etc.
-│     ├──src
-│     ├──index.html
-│     └──...
-├──electron.vite.config.ts
-├──package.json
-└──...
-```
 

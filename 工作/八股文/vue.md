@@ -2,10 +2,86 @@
 title: 
 date: 2023-09-06
 description: 
-tags: []
+tags: 
+   - 
 ---
 
+## 传值
+
+父传子 props
+
+子传父 $emit
+
+兄弟传值 $bus
+
+组件间传值，共用值 vuex
+
+vuex是一个全状态数据管理
+
+```
+pnpm install vuex --save
+```
+
+*src\store\index.js*
+
+导入 use 
+
+```
+import Vue from 'vue';
+import Vuex from 'vuex';
+Vue.use(Vuex)
+
+export default new Vuex.Store({
+  state: {},
+  mutations: {},
+  actions: {},
+  modules: {}
+})
+```
+
+*src\main.js*
+
+挂在到new Vue上
+
+```
+import Vue from 'vue'
+import App from './App.vue'
+import store from './store';
+
+Vue.config.productionTip = false
+
+new Vue({
+  store,
+  render: h => h(App),
+}).$mount('#app')
+```
+
+使用
+
+```
+<h1>{{ $store.state.count }}</h1>
+this.$store.state.count
+```
+
 ## 对比vue2和vue3
+
+**vue3** 
+
+2020年9月发布的正式版
+
+Vue3支持大多数Vue2的特性
+
+Vue中设计了一套强大的组合api代替了Vue2中的选项式api，复用性更强了
+
+更好的支持TS
+
+最主要：Vue3中使用了Proxy配合Reflect 代替了Vue2中的Object.defineProperty()方法实现数据的响应式（数据代理）
+
+重写了虚拟DOM，速度更快
+
+新的组件： Fragment（片段）/Teleport（瞬移）/Susoense（不确定）
+
+新的脚手架工具Vite（Vite 对比传统脚手架工具，采用了基于 ES 模块的开发方式，构建速度大大提高
 
 ### 生命周期
 
@@ -84,12 +160,6 @@ onMounted(() => {
   <footer></footer>
 </template>
 ```
-
-### 代理
-
-
-
-
 
 ## 为什使用pinia代替vuex
 
