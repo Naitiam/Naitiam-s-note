@@ -1,6 +1,6 @@
 # Vue管理CSS样式
 
-!!!!!高级用法
+！！！高级用法（老忘记！
 
 ```
 :style="{'background-color': item.meta.title.includes(msg) && msg!==''?'yellow':''}"
@@ -10,6 +10,7 @@
           'font-size': curFontSize + 'px',
           'line-height': (curFontSize+10)+'px'
          }"
+:class="curColorIndex == index?'icon-selected':''"
 :class="['iconfont',curColorIndex == index?'icon-selected':'']"
 :class="[item.meta.title.includes(msg) && msg!==''?'bg':'']"
 .bg{

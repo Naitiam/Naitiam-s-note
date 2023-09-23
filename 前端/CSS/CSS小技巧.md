@@ -16,8 +16,6 @@
 
 margin:0 auto
 
-
-
 ```
   用在父组件上
   display: flex;
@@ -25,7 +23,28 @@ margin:0 auto
   align-items: center;
 ```
 
-使用定位加margin:auto
+定位+transform
+
+```
+.parent {
+	width: 300px;
+	height: 300px;
+	border: 1px solid pink;
+	position: relative;
+}
+
+.son {
+	width: 100px;
+	height: 100px;
+	background-color: red;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+}
+```
+
+定位+margin:auto
 
 ```
 .parent {
