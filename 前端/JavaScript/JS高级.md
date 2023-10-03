@@ -77,7 +77,7 @@ none
 > 
 > [【何不三连】做完这48道题彻底弄懂JS继承(1.7w字含辛整理-返璞归真)](https://juejin.cn/post/6844904098941108232#heading-0)
 
-**构造函数**：本身就是一个函数，与普通函数没有任何区别，不过为了规范一般将其**首字母大写**。构造函数和普通函数的区别在于，使用new生成实例的函数就是构造函数，直接调用的就是普通函数。
+**构造函数**：本身就是一个函数，与普通函数没有任何区别，不过为了规范一般将其**首字母大写**。构造函数和普通函数的区别在于，能使用new生成实例的函数就是构造函数，直接调用的就是普通函数。
 
 **原型prototype**：一个对象，也称prototype为原型对象
 
@@ -112,6 +112,10 @@ none
   console.log(h1.__proto__ === Star.prototype);//true
   console.log(h1.__proto__.constructor === Star);//true
 ```
+
+`实例.__proto__ === 构造函数.prototype`   每一个对象都有一个原型，可以通过 `__proto__` 属性来访问
+
+`实例.__proto__.constructor === 构造函数` 构造属性 `constructor` 指向创建该对象的构造函数。
 
 Object.prototype 的原型是——null，这意味着 Object.prototype 没有原型。
 

@@ -225,6 +225,8 @@ return Object.keys(obj || []).length === 0;
 }
 ```
 
+![image-20231003213358838](img/JS基础.assets/image-20231003213358838.png)
+
 对象转为 `JSON` 字符串   [JSON.stringify()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) 
 
 ```

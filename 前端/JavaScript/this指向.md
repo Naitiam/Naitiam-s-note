@@ -56,7 +56,7 @@ console.log(add1()); // 执行新的函数，输出 6
 案例
 
 ```
-    <!-- 点击禁用，两秒后回复 -->
+    <!-- 点击禁用，两秒后恢复 -->
     <button>点击禁用</button>
     <script>
       const btn = document.querySelector("button");
@@ -71,6 +71,10 @@ console.log(add1()); // 执行新的函数，输出 6
       });
     </script>
 ```
+
+解析：
+
+为了在定时器的回调函数中能够访问到按钮元素 `btn`，使用 `bind(this)` 将当前的执行上下文（即按钮元素）绑定到回调函数中
 
 ## 题目
 
