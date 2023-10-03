@@ -36,6 +36,10 @@ Hi maiiitian! You've successfully authenticated, but GitHub does not provide she
 `git remote rm origin` 删除远程地址
 
 > git pull <远程主机名> <远程分支名>:<本地分支名>
+>
+> **git pull=fetch+merge** 获取远端最新到本地 自动merge
+>
+> git fetch=pull 获取远端到本地 不merge
 
 `git pull origin master`   从远程获取代码并合并本地的版本 
 
@@ -75,8 +79,6 @@ Hi maiiitian! You've successfully authenticated, but GitHub does not provide she
 `git merge 分支名 ` 合并分支的变更
 
 手动解决冲突
-
-`git fetch `  ?监测远程仓库（查看分支）
 
 ![image-20221002183331806](img/上传代码到Github.assets/image-20221002183331806.png)
 

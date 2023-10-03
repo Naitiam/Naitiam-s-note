@@ -113,15 +113,15 @@ Vue中设计了一套强大的组合api代替了Vue2中的选项式api，复用�
 
 新的脚手架工具Vite（Vite 对比传统脚手架工具，采用了基于 ES 模块的开发方式，构建速度大大提高
 
-### *传值
+### *vue怎样实现组件传值
 
 父传子 props
 
 子传父 $emit
 
-兄弟传值 $bus
+中央时间总线 bus 简单的跨组件通信 并不直接共享数据
 
-组件间传值，共用值 vuex pinia
+组件间，异步，vuex pinia，全局的状态树
 
 ### *computed有啥特点？和watch，methods的区别
 
