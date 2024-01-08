@@ -80,3 +80,54 @@ vue中实现浅拷贝可以使用 `Object.assign()` 或扩展运算符，而实�
 <noscript><link rel="stylesheet" href="your-styles.css"></noscript>
 ```
 
+### **响应事件有哪些？**
+
+鼠标单击事件（ onclick ）
+
+鼠标经过事件（ onmouseover ）
+
+鼠标移开事件（ onmouseout ）
+
+光标聚焦事件（ onfocus ）
+
+失焦事件（ onblur ）
+
+内容选中事件（ onselect ）
+
+文本框内容改变事件（ onchange ）
+
+加载事件（ onload ）
+
+卸载事件（ onunload ）
+
+### **什么是 window 对象? 什么是 document 对象?**
+
+window对象代表浏览器中打开的一个窗口。document对象代表整个html文档。实际上，document对象是window对象的一个属性。
+
+### **document.onload 和 document.ready两个事件的区别**
+
+页面加载完成有两种事件，一是ready，表示文档结构已经加载完成（不包含图片等非文字媒体文件），二是onload，指示页面包含图片等文件在内的所有元素都加载完成。
+
+### **字符串方法**
+
+toLowerCase(): 把字符串转为小写，返回新的字符串。
+
+toUpperCase(): 把字符串转为大写，返回新的字符串。
+
+charAt(): 返回指定下标位置的字符。
+
+charCodeAt(): 返回指定下标位置的字符的unicode编码。
+
+indexOf(): 返回某个指定的子字符串在字符串中第一次出现的位置。
+
+lastIndexOf(): 返回某个指定的子字符串在字符串中最后出现的位置
+
+substring(): 提取字符串中介于两个指定下标之间的字符。
+
+substr(): 返回从指定下标开始指定长度的的子字符串
+
+split(): 把字符串分割成字符串数组。
+
+replace(): 在字符串中用一些字符替换另一些字符，或替换一个与正则表达式匹配的子串。
+
+match(): 返回所有查找的关键字内容的数组。

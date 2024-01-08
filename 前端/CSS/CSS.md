@@ -72,6 +72,14 @@ list-style-type	disc（默认）、circle、square、decimal 等	设置列表项
 
 盒子模型就是用来装 HTML 元素的盒子，它用于描述一个装有 HTML 元素的矩形盒子。该模型包括边框（border）、内边距（padding）、内容（content）、外边距（margin）、宽和高等属性。
 
+content + padding +border + margin
+
+如果一个元素的内容框宽度为200px，内边距(padding)为10px，边框(border)为2px，外边距(margin)为20px
+
+正常盒模型：box-sizing: content-box 的元素总宽度 = 200px + 10px(padding) + 2px(border) + 20px(margin) = 232px。
+
+怪异盒模型（向内扩展）：box-sizing: border-box 的元素总宽度 = 200px。
+
 ![image-20230228193552267](img/Untitled.assets/image-20230228193552267.png)
 
 `border: border-width border-style border-color;`
