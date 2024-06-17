@@ -170,7 +170,7 @@ const o3 = {
   fn() {
     var fn = o1.fn;
     return fn();
-  },
+  }, 
 };
 
 console.log(o1.fn()); // ?
@@ -248,7 +248,7 @@ function Person2(name) {
 function Person3(name) {
   this.name = name;
   return {
-    name: "xxx",
+    name: "xxx", 
   };
 }
 function Person4(name) {

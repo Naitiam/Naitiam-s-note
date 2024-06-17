@@ -54,21 +54,51 @@ none
 
 内存泄漏：程序中分配的内存由于某种原因程序未释放或无法释放叫做内存泄漏（例子?
 
-**闭包**：**当一个内部嵌套函数引用了嵌套外部函数的变量或函数**时，就产生了闭包
+**闭包**：**函数嵌套函数时，内层函数引用了外层函数作用域下的变量，并且内层函数在全局环境下可访问，就形成了闭包///当一个内部嵌套函数引用了嵌套外部函数的变量或函数**时，就产生了闭包
 
 闭包存在的问题：内存泄漏
 
+经典闭包，实现自增函数，**防抖节流**！！就是用的闭包
+
 ```js
-  // 闭包实现数据的私有
-  function count() {
-    let i = 0;
-    function fn() {
-      i++;
-      console.log(i);
-    }
-    return fn;
+const addOne = (function () {
+  let num = 0;
+  return function () {
+    num++;
+    return num;
   }
-  const fun = count();
+})()
+
+module.exports = {
+  addOne
+}
+实现：
+console.log(addOne()); // 1
+console.log(addOne()); // 2
+console.log(addOne()); // 3
+
+// 节流
+function throttle(fn, timeout) {
+    let timer = null
+    return function (...arg) {
+        if(timer) return
+        timer = setTimeout(() => {
+            fn.apply(this, arg)
+            timer = null
+        }, timeout)
+    }
+}
+
+// 防抖
+function debounce(fn, timeout){
+    let timer = null
+    return function(...arg){
+        clearTimeout(timer)
+        timer = setTimeout(() => {
+            fn.apply(this, arg)
+        }, timeout)
+    }
+}
 ```
 
 ### 原型与原型链
